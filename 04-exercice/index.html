@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercice: interpolation + liaison d'attribut</title>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ titre }}</h1>
+            <p>{{ message }}</p>
+            <img v-bind:src="lienImg" :alt="alt" />
+        </div>
+
+        <script>
+            let app = Vue.createApp({
+                data: function() {
+                    const variables = {
+                        titre: 'Lorem ipsum',
+                        message: 'Quis pariatur tempor cupidatat dolore labore tempor in et.',
+                        lienImg: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Akita_inu.jpeg',
+                        alt: 'Photo d\'un chien'
+                    }
+                    return variables;
+                }
+            });
+            app.mount("#app");
+        </script>
+    </body>
+</html>
