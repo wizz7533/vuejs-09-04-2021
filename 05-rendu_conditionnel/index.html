@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vuejs</title>
+        <link rel="icon" href="../vuejs.png" type="image/png">
+        <script src="../vue.global.js"></script>
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-if="isVisible">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi voluptate animi quod laudantium quae est magni magnam accusantium pariatur saepe, sapiente nesciunt hic atque tempora voluptates voluptatibus facilis porro ut?
+            </p>
+            <h2 v-else>
+                Hello
+            </h2>
+
+            <template v-if="isVisible">
+                <h2>Voici mes éléments</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla nobis obcaecati natus praesentium deserunt, illo nisi, facilis architecto sed id fugit quam cumque nostrum numquam, laudantium quis molestias blanditiis reprehenderit.</p>
+            </template>
+            <p v-else>Rien à afficher</p>
+
+            <p v-if="resultat == 'even'">c'est pair</p>
+            <p v-else-if="resultat == 'odd'">c'est impair</p>
+            <p v-else>Je n'ai pas compris</p>
+
+            <p v-if="isVisible">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad hic, totam error alias est reiciendis, quos tempora sit omnis delectus eum sed? Nostrum eos tempora et aut, expedita at voluptatem!
+            </p>
+
+            <!-- Equivalent au css: display: none -->
+            <p v-show="isVisible">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos asperiores totam similique sequi, ipsum tempore maxime, cum corporis optio odio ex. Quidem, in consequatur aspernatur animi fugiat quaerat voluptate. Veritatis!
+            </p>
+        </div>
+    </body>
+</html>
