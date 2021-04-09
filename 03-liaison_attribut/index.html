@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vuejs</title>
+        <script src="../vue.global.js"></script>
+        <link rel="icon" href="../vuejs.png" type="image/png">
+    </head>
+    <body>
+        <div id="app">
+            <!-- <a =href="{{myLien}}"> <= on ne peut pas faire ca -->
+            <a v-bind:href="myLien">Lien vers Dawan</a>
+            <button v-bind:disabled="isDisabled">Valider</button>
+            <!-- 
+                Syntaxe raccourcis: v-bind:attr 
+                avec un v-bind, vuejs va chercher une variable
+                si on veut concatener un chaine de caracteres avec un variable
+                on va devoir utiliser les ''
+            -->
+            <a :href="myLien" v-bind:title="'Lien vers dawan: ' + myLien">
+                Lien vers dawan
+            </a>
+        </div>
+
+        <script>
+            let app = Vue.createApp({
+                data() {
+                    return {
+                        myLien: "http://dawan.fr",
+                        isDisabled: true
+                    }
+                }
+            });
+            app.mount('#app');
+        </script>
+    </body>
+</html>
