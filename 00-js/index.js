@@ -127,4 +127,6 @@ prenoms.myForEach(function(prenom) {
     console.log("Le prenom: " + prenomSensInverse);
 });
 tableau2 = prenoms.myFilter(prenom => prenom.length > 4);
-console.log(tableau2);
+console.log("Tableau filtré: ", tableau2);
+tableau2 = prenoms.myMap(prenom => prenom.toUpperCase() );
+console.log("Nouveau Tableau: ", tableau2);
