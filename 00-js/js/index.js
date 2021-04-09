@@ -71,47 +71,6 @@ voiture = {
     }
 }
 
-
-class MyArray {
-    // Regroupe tous les arguments sous forme de tableau
-    // permet de faire une fonciton qui prend un nombre indeterminé d'arguments
-    constructor(...prenoms) {
-        // console.log("Prenoms: ", prenoms);
-        this.monTableau = prenoms;
-    }
-
-    myForEach(maCallBack) {
-        for (const element of this.monTableau) {
-            maCallBack(element);
-        }
-    }
-
-    myFilter(maCallBack) {
-        const newTableau = [];
-        for (const element of this.monTableau) {
-            let isSuperieur = maCallBack(element);
-            if (isSuperieur) {
-                newTableau.push(element);
-            }
-        }   
-        return newTableau;
-    }
-
-    myMap(maCallBack) {
-        const newTableau = [];
-        for (const element of this.monTableau) {
-            let resultat = maCallBack(element);
-            newTableau.push(resultat);
-        }   
-        return newTableau;
-    }
-
-    static description() {
-        console.log("On est pas obligé d'avoir une instance de la classe, pour utiliser cette methode");
-        console.log("On ne peut pas utiliser le mot clef this dans une methode statique car on a pas access au vairable d'instance ");
-    }
-}
-
 // Array.from();
 MyArray.description();
 // MyArray.myFilter(); <- ce n'est pas une methode statique.
@@ -131,9 +90,12 @@ tableau2 = prenoms.filter(function(prenom) {
 });
 console.log(tableau2);
 
+
+import { MyArray, utilisateurs } from './MyArray.js';
+import MOVIES from './MyArray.js';
+
 console.warn(" => MyForEach");
 prenoms = new MyArray('Maude', 'Ella', 'Rick', 'Alain');
-
 prenoms.myForEach(function(prenom) {
     let prenomSensInverse = prenom.split('').reverse().join('');
     console.log("Le prenom: " + prenomSensInverse);
@@ -142,3 +104,7 @@ tableau2 = prenoms.myFilter(prenom => prenom.length > 4);
 console.log("Tableau filtré: ", tableau2);
 tableau2 = prenoms.myMap(prenom => prenom.toUpperCase() );
 console.log("Nouveau Tableau: ", tableau2);
+
+
+console.log("Utilisateurs : ", utilisateurs);
+console.log("Movies : ", MOVIES);
