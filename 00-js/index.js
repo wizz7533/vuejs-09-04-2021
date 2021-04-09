@@ -85,6 +85,7 @@ class MyArray {
             maCallBack(element);
         }
     }
+
     myFilter(maCallBack) {
         const newTableau = [];
         for (const element of this.monTableau) {
@@ -104,7 +105,17 @@ class MyArray {
         }   
         return newTableau;
     }
+
+    static description() {
+        console.log("On est pas obligé d'avoir une instance de la classe, pour utiliser cette methode");
+        console.log("On ne peut pas utiliser le mot clef this dans une methode statique car on a pas access au vairable d'instance ");
+    }
 }
+
+// Array.from();
+MyArray.description();
+// MyArray.myFilter(); <- ce n'est pas une methode statique.
+
 let prenoms = ['Maude', 'Ella', 'Rick', 'Alain'];
 prenoms = new Array('Maude', 'Ella', 'Rick', 'Alain');
 console.log(prenoms);
@@ -121,7 +132,8 @@ tableau2 = prenoms.filter(function(prenom) {
 console.log(tableau2);
 
 console.warn(" => MyForEach");
-prenoms = new MyArray('Maude', 'Ella', 'Rick', 'Alain')
+prenoms = new MyArray('Maude', 'Ella', 'Rick', 'Alain');
+
 prenoms.myForEach(function(prenom) {
     let prenomSensInverse = prenom.split('').reverse().join('');
     console.log("Le prenom: " + prenomSensInverse);
