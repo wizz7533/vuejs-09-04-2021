@@ -70,3 +70,43 @@ voiture = {
 
     }
 }
+
+
+class MyArray {
+    // Regroupe tous les arguments sous forme de tableau
+    // permet de faire une fonciton qui prend un nombre indeterminé d'arguments
+    constructor(...prenoms) {
+        // console.log("Prenoms: ", prenoms);
+        this.monTableau = prenoms;
+    }
+
+    myForEach(maCallBack) {
+        for (const element of this.monTableau) {
+            maCallBack(element);
+        }
+    }
+    myFilter() {
+
+    }
+
+    myMAp() {
+        
+    }
+}
+
+let prenoms = ['Maude', 'Ella', 'Rick', 'Alain'];
+prenoms = new Array('Maude', 'Ella', 'Rick', 'Alain');
+console.log(prenoms);
+
+console.warn(" => forEach");
+prenoms.forEach(function(prenom) {
+  let prenomSensInverse = prenom.split('').reverse().join('');
+  console.log("Le prenom: " + prenomSensInverse);
+})
+
+console.warn(" => MyForEach");
+prenoms = new MyArray('Maude', 'Ella', 'Rick', 'Alain')
+prenoms.myForEach(function(prenom) {
+    let prenomSensInverse = prenom.split('').reverse().join('');
+    console.log("Le prenom: " + prenomSensInverse);
+});
