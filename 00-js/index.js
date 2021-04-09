@@ -85,12 +85,19 @@ class MyArray {
             maCallBack(element);
         }
     }
-    myFilter() {
-
+    myFilter(maCallBack) {
+        const newTableau = [];
+        for (const element of this.monTableau) {
+            let isSuperieur = maCallBack(element);
+            if (isSuperieur) {
+                newTableau.push(element);
+            }
+        }   
+        return newTableau;
     }
 
-    myMAp() {
-        
+    myMap() {
+
     }
 }
 
@@ -104,9 +111,16 @@ prenoms.forEach(function(prenom) {
   console.log("Le prenom: " + prenomSensInverse);
 })
 
+tableau2 = prenoms.filter(function(prenom) {
+    return (prenom.length > 4)
+});
+console.log(tableau2);
+
 console.warn(" => MyForEach");
 prenoms = new MyArray('Maude', 'Ella', 'Rick', 'Alain')
 prenoms.myForEach(function(prenom) {
     let prenomSensInverse = prenom.split('').reverse().join('');
     console.log("Le prenom: " + prenomSensInverse);
 });
+tableau2 = prenoms.myFilter(prenom => prenom.length > 4);
+console.log(tableau2);
