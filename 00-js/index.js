@@ -96,11 +96,15 @@ class MyArray {
         return newTableau;
     }
 
-    myMap() {
-
+    myMap(maCallBack) {
+        const newTableau = [];
+        for (const element of this.monTableau) {
+            let resultat = maCallBack(element);
+            newTableau.push(resultat);
+        }   
+        return newTableau;
     }
 }
-
 let prenoms = ['Maude', 'Ella', 'Rick', 'Alain'];
 prenoms = new Array('Maude', 'Ella', 'Rick', 'Alain');
 console.log(prenoms);
