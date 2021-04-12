@@ -1,7 +1,9 @@
 let app = Vue.createApp({
     data() {
         return {
-            todos: []
+            todos: [
+                {couleur: '', taille: '', texte: ''}
+            ]
         }
     },
     methods: {
