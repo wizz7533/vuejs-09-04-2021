@@ -18,6 +18,10 @@ let app = Vue.createApp({
         afficherValeur(evenement){
             // console.log(evenement);
             console.log(evenement.target.value);
+        },
+
+        editPrenom(evenement){
+            this.prenom = evenement.target.value;
         }
     }
 });

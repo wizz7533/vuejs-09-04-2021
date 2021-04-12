@@ -32,6 +32,12 @@
                 L'événement est passé automatiquement si on ne le precise pas 
             -->
             <input type="text" @input="afficherValeur"/>
+
+            <!-- Liaison a double sens -->
+            <p>Prénom: {{ prenom }}</p>
+            <input type="text" :value="prenom" @input="editPrenom($event)"/>
+
+            <input type="text" v-model="prenom">
         </div>
     </body>
 </html> 
