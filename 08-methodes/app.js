@@ -8,7 +8,7 @@ let app = Vue.createApp({
             return "Salut tout le monde !";
         },
         getDate: function() {
-            const date = new Date()
+            const date = new Date();
             return date.toLocaleDateString();
         }
     }
