@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vuejs</title>
+        <script src="../../vue.global.js"></script>
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-if="imageUrl == ''">Aucun image disponible</p>
+            <img v-else :src="imageUrl" :alt="imageAlt" width="300">
+            <br/>
+            <button v-on:click="changeImage(1)">Chien</button>
+            <button @click="changeImage(2)">Chat</button>
+            <button @click="changeImage(3)">Lapin</button>
+        </div>
+    </body>
+</html>
