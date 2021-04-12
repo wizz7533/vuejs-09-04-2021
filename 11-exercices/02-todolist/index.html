@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vuejs</title>
+        <script src="../../vue.global.js"></script>
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <div id="app">
+            <form action="" v-on:submit="addTask($event)">
+                <fieldset>
+                    <legend>To do list</legend>
+                    <label for="task">Tache</label>
+                    <input type="text" name="task" id="task"/>
+    
+                    <input type="submit" value="Valider">
+                </fieldset>
+            </form>
+
+            <h1>Liste</h1>
+            <ul>
+                <li v-for="todo of todos">
+                    {{todo}}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
