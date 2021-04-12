@@ -9,7 +9,7 @@ let app = Vue.createApp({
         },
         getDate: function() {
             const date = new Date()
-            return date;
+            return date.toLocaleDateString();
         }
     }
 });
