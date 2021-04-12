@@ -6,6 +6,11 @@ let app = Vue.createApp({
             mesClasses: {
                 active: false,
                 'txt-error': true,
+            },
+            monStyle: {
+                'font-size': '18px',
+                color: "red",
+                backgroundColor: '#000'
             }
         }
     },
