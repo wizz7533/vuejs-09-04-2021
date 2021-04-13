@@ -1,9 +1,7 @@
-import bodyComponent from './body.js';
-
 let app = Vue.createApp({
     data() {
         return {
-            message: 'Hello World !',
+            parentCount: 0,
         }
     },
     methods: {
