@@ -1,5 +1,5 @@
-import TheHeader from './theheader.js';
-import TheBody from './thebody.js';
+import TheHeader from './components/theheader.js';
+import TheBody from './components/thebody.js';
 
 let app = Vue.createApp({
     data() {
