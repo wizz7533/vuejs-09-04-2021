@@ -38,7 +38,7 @@ app.component('v-header', {
         </header>
     `,
     components: {
-        'v-body': bodyComponent
+        'v-body': bodyComponent,
     }
 });
 
