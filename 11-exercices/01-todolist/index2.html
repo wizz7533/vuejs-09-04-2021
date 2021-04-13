@@ -31,9 +31,10 @@
                     <div class="form-group">
                         <label for="level" class="form-label">Etiquette</label>
                         <select id="level" class="form-select">
-                          <option 
-                            v-for="option of options" 
-                            v-bind:value="option.type">
+                            <option 
+                                v-for="option of options" 
+                                v-bind:value="option.type"
+                            >
                               {{option.label}}
                             </option>
                         </select>
@@ -42,9 +43,8 @@
                 </fieldset>
             </form>
 
-            <h1>Liste</h1>
+            <h1>Liste:</h1>
             <ul>
-
                 <li 
                     v-for="todo of todos" 
                     :style="todo.style" 
