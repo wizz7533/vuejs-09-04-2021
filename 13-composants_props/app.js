@@ -42,6 +42,7 @@ app.component('v-header', {
     }
 });
 
+
 // Composant Global
 app.component('v-footer', {
     name: 'Footer',
