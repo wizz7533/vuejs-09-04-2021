@@ -20,7 +20,7 @@ let app = Vue.createApp({
     computed: {
     },
     watch: {
-    },
+    }
 });
 
 // Composant Global
@@ -49,7 +49,7 @@ app.component('v-card', {
         }
     },
     template: `
-        <div>
+        <div class="test">
             <p>Compteur Enfant: {{ childCount }}</p>
             <button @click="incrementer()">
                 Incrementer
