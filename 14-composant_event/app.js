@@ -6,8 +6,14 @@ let app = Vue.createApp({
     },
     methods: {
         incrementerParent(event) {
-            console.log("Event: ", event);
-            console.log("Type of Event: ", typeof event);
+            console.log("Evénement: ", event);
+            console.log(
+                "Type de l'événement: ", 
+                typeof(event)
+            );
+            // Pas de event.target.value
+            // Car c'est notre propres evenement
+            // et il renvoie un simple nombre
             this.parentCount = event;   
         }
     },
