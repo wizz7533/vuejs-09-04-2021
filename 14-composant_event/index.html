@@ -14,10 +14,11 @@
             <p>Parent Compteur {{ parentCount }}</p>
             <v-card 
                 :compteur="parentCount" 
-                @my-incrementer-compteur="incrementerParent">
+                @my-incrementer-compteur="incrementerParent($event)">
                 <!-- v-on:my-incrementer-compteur="incrementerParent($event)"> -->
 
             </v-card>
+            
         </div>
     </body>
 </html> 
