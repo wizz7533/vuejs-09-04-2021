@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vuejs</title>
+        <script src="../vue.global.js"></script>
+        <script type="module" src="app.js" defer></script>
+        <link rel="shortcut icon" href="../vuejs.png" type="image/png">
+    </head>
+    <body>
+        <div id="app"> 
+            <v-header bgColor="black" nbElement="5"></v-header>
+            <v-footer msg="Bonjour tout le monde" visible="false">
+            </v-footer>
+            <!-- 
+                On peut utiliser la liaison d'attribut
+                liaison d'attributs si on donne un boolean, ou un nombre
+                le type est conservé
+            -->
+            <v-footer v-bind:msg="message" :visible="false">
+            </v-footer>
+            <v-card></v-card>
+        </div>
+    </body>
+</html> 
