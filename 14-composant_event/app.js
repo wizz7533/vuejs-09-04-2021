@@ -8,6 +8,7 @@ let app = Vue.createApp({
         incrementerParent(event) {
             console.log("Event: ", event);
             console.log("Type of Event: ", typeof event);
+            this.parentCount = event;   
         }
     },
     computed: {
@@ -35,7 +36,10 @@ app.component('v-card', {
             // la fonction $emit prend 2 arguments:
             //      1- le nom de l'evenement (je peux mettre ce que je veux comme nom)
             //      2- la valeur/variable/objet... a transmettre
-            this.$emit('my-incrementer-compteur', 5);
+            this.$emit(
+                'my-incrementer-compteur', 
+                this.childCount
+            );
         }
     },
     template: `
