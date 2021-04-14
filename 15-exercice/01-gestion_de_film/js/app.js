@@ -14,7 +14,15 @@ let app = Vue.createApp({
     },
     components: {
         'v-header': TheHeader,
-        'the-body': TheBody
+        'the-body': TheBody,
+        // 'v-test': {
+        //     template: `
+        //         <header>
+        //             <h1>Blabla</h1>
+        //             <slot></slot>
+        //         </header>
+        //     `
+        // }
     }
 });
 
