@@ -5,14 +5,6 @@
 </template>
 
 <script>
-/* createApp(
-  {
-    name: 'App',
-    components: {
-      HelloWorld
-    }
-}
-).mount('#app') */
 import Title from './components/Title.vue';
 
 export default {
@@ -25,6 +17,7 @@ export default {
   components: {
     //  'Title': Title,
     //  Title,
+    //  TheNavigationHeader,
     'v-title': Title
   }
 }
