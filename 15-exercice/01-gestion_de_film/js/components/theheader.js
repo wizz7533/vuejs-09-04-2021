@@ -4,7 +4,14 @@ const TheHeader = {
     name: 'Header',
     data() {
         return {
-
+            headerStyle: {
+                display: 'flex',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                'background-color': "#212529",
+                color: 'white',
+                'margin-bottom': '15px'
+            }
         }
     },
     methods: {
@@ -13,7 +20,7 @@ const TheHeader = {
         }
     },
     template: `
-        <header>
+        <header :style="headerStyle">
             <h1>Mon site</h1>
             <!-- <TheNavigationHeader @send-search="$emit('send-search-parent', $event)"> -->
             <TheNavigationHeader @send-search="sendSearchToApp($event)">
