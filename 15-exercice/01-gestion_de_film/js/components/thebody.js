@@ -1,6 +1,7 @@
 
 const TheBody = {
     name: 'Body',
+    props: ['search'],
     data() {
         return {
             movies: [
@@ -29,34 +30,48 @@ const TheBody = {
             this.movies.splice(index, 1);
         }
     },
+    computed: {
+        filteredMovie() {
+            const userSearched = this.search.toLowerCase();
+            const newArray = this.movies.filter(
+                (movie) => {
+                    const title = movie.title.toLowerCase();
+                    return title.includes(userSearched);
+                }
+            );
+            return newArray;
+        }
+    },
     template: `
-        <table v-if="movies.length" class="table table-striped table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Titre</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Année de sortie</th>
-                    <th scope="col">Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-for="(movie, index) of movies">
-                    <th scope="row">{{index + 1}}</th>
-                    <td>{{movie.title}}</td>
-                    <td>{{movie.description}}</td>
-                    <td>{{movie.year}}</td>
-                    <td>
-                        <img
-                            @click="removeMovie(index)"
-                            src="./assets/remove.svg" 
-                            alt="icone suppression du film"
-                            width="32">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <h2 v-else>Aucun film disponible</h2>
+        <main>
+            <table v-if="filteredMovie.length" class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Année de sortie</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(movie, index) of filteredMovie">
+                        <th scope="row">{{index + 1}}</th>
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.description}}</td>
+                        <td>{{movie.year}}</td>
+                        <td>
+                            <img
+                                @click="removeMovie(index)"
+                                src="./assets/remove.svg" 
+                                alt="icone suppression du film"
+                                width="32">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 v-else>Aucun film disponible</h2>
+        </main>
     `
 }
 

@@ -4,12 +4,13 @@ import TheBody from './components/thebody.js';
 let app = Vue.createApp({
     data() {
         return {
-
+            search: ''
         }
     },
     methods: {
         updateSearch(event) {
-            console.log("App: ", event);
+            // console.log("App: ", event);
+            this.search = event;
         }
     },
     components: {
