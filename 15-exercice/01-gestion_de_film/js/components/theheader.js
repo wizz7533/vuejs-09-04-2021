@@ -10,7 +10,8 @@ const TheHeader = {
                 'align-items': 'center',
                 'background-color': "#212529",
                 color: 'white',
-                'margin-bottom': '15px'
+                'margin-bottom': '15px',
+                padding: '10px'
             }
         }
     },
