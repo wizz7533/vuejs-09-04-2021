@@ -10,7 +10,7 @@ export default createStore({
   // Equivalent aux Méthods (Traitement complexe ou asyncrhone, puis appel la mutation)
   actions: {
   },
-  //Equivalent des proriétés calculée
+  //Equivalent des proriétés calculées
   getters: {},
 
   // Equivalent a components: {}
