@@ -9,8 +9,9 @@ const TheHeader = {
     },
     template: `
         <header>
-            <h1>Super Site !</h1>
-            <TheNavigationHeader></TheNavigationHeader>
+            <h1>Mon site</h1>
+            <TheNavigationHeader @send-search="$emit('send-search-parent', $event)">
+            </TheNavigationHeader>
         </header>
     `,
     components: {

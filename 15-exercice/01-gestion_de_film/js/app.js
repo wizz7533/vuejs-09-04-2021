@@ -7,6 +7,11 @@ let app = Vue.createApp({
 
         }
     },
+    methods: {
+        updateSearch(event) {
+            console.log("App: ", event);
+        }
+    },
     components: {
         'v-header': TheHeader,
         'the-body': TheBody
