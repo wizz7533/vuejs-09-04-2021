@@ -1,16 +1,31 @@
 <template>
   <div>
-    <the-header></the-header>
-    <the-body></the-body>
+      <v-header @send-search-parent="updateSearch($event)"> 
+      </v-header>
+      <the-body :search="search"></the-body>
   </div>
 </template>
 
 <script>
+import TheBody from './components/ex1/TheBody';
+import TheHeader from './components/ex1/TheHeader';
 
 export default {
   name: 'App',
-  components: {
-  }
+  data() {
+        return {
+            search: ''
+        }
+    },
+    methods: {
+        updateSearch(event) {
+            this.search = event;
+        }
+    },
+    components: {
+        'v-header': TheHeader,
+        'the-body': TheBody
+    }
 }
 </script>
 
