@@ -7,10 +7,16 @@ const TheHeader = {
 
         }
     },
+    methods: {
+        sendSearchToApp(event) {
+            this.$emit('send-search-parent', event);
+        }
+    },
     template: `
         <header>
             <h1>Mon site</h1>
-            <TheNavigationHeader @send-search="$emit('send-search-parent', $event)">
+            <!-- <TheNavigationHeader @send-search="$emit('send-search-parent', $event)"> -->
+            <TheNavigationHeader @send-search="sendSearchToApp($event)">
             </TheNavigationHeader>
         </header>
     `,
