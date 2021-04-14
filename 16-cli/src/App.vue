@@ -1,11 +1,13 @@
 <template>
   <div>
     <v-title></v-title>
+    <Counter></Counter>
   </div>
 </template>
 
 <script>
-import Title from './components/Title.vue';
+import Title from './components/i-decouverte/Title.vue';
+import Counter from './components/ii-store/Counter';
 
 export default {
   name: 'App',
@@ -18,7 +20,8 @@ export default {
     //  'Title': Title,
     //  Title,
     //  TheNavigationHeader,
-    'v-title': Title
+    'v-title': Title,
+    Counter
   }
 }
 </script>
