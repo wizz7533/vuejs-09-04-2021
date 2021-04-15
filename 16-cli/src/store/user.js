@@ -14,3 +14,6 @@ class UserStore {
         this.email = null;
     }
 }
+
+let userStore = new UserStore();
+export default userStore;

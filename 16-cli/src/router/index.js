@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import routes from './routes';
+import userStore from '@/store/user';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -17,6 +18,11 @@ router.beforeEach(
       if (to.meta.requiresAuth) {
         // il faut etre connecter, 
         console.log("Il faut etre connecté");
+        if (userStore.state.email) {
+          next();
+        } else {
+          next('/login');
+        }
       } else {
         // c'est ok on peut acceder a la page
         next();
