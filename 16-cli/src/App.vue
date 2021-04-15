@@ -1,14 +1,25 @@
 <template>
   <div>
       <h1>VueJS</h1>
+      <navigation></navigation>
       <!-- 
-        <a href="/">Accueil</a> on ne veut plus utiliser cette balise car elle recharge la page 
-      -->
-      <router-link to="/">Accueil</router-link> | 
-      <router-link to="/count">Count</router-link>
-      <router-view></router-view>
+        Charge ici le composant associé a l'URL
+       -->
+      <router-view 
+        :key="$route.path">
+      </router-view>
   </div>
 </template>
+
+<script>
+  import Navigation from './components/Navigation';
+  export default {
+    name: 'root',
+    components: {
+      Navigation
+    }
+  }
+</script>
 
 <style>
 #app {
