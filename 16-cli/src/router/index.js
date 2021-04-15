@@ -7,4 +7,21 @@ const router = createRouter({
   routes
 })
 
+// La callback est appellée avant chaque
+//  navigation
+router.beforeEach(
+  // to: La route de destination
+  // from: La route de provenance
+  // next: fonction qui permet de rediriger
+  function(to, from, next) {
+      if (to.meta.requiresAuth) {
+        // il faut etre connecter, 
+        console.log("Il faut etre connecté");
+      } else {
+        // c'est ok on peut acceder a la page
+        next();
+      }
+  }
+);
+
 export default router

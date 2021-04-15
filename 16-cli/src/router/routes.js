@@ -17,7 +17,14 @@ const routes = [
     },
     { path: '/:pathMath(.*)*', component: NotFound},
     { path: '/login', component: Login},
-    { path: '/admin', component: Admin},
+    {
+        path: '/admin', 
+        meta: {
+            // on peut choisir le nom qu'on veut
+            requiresAuth: true
+        },
+        component: Admin
+    },
 ]
 
 export default routes;
