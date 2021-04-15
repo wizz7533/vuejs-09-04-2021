@@ -8,6 +8,13 @@
                     {{product.title}}
             </li>
         </ul>
+        <form action="">
+            <fieldset>
+                <legend>Filtres</legend>
+                <label for="available">Produits disponibles </label>
+                <input id="available" type="checkbox" v-model="checked">
+            </fieldset>
+        </form>
     </div>
 </template>
 
@@ -17,13 +24,18 @@
     export default {
         data() {
             return {
+                checked: false
                 // products: []
             }
         },
         computed: {
-            products(){
-                return this.$store.state.products
-            }
+            products(){ 
+                if (this.checked) {
+                    return this.$store.getters.availableProducts
+                } else {
+                    return this.$store.state.products
+                }
+            },
         },
         // On attend que le composant soit créer
         created() {

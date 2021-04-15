@@ -19,7 +19,12 @@ export default createStore({
   },
 
   //Equivalent des proriétés calculées
-  getters: {},
+  getters: {
+     // La variable state sera fournie par vue
+     availableProducts(state) {
+        return state.products.filter(product => product.inventory > 0);
+     }
+  },
 
   // Equivalent a components: {}
   modules: {
