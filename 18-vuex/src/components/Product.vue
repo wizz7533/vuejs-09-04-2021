@@ -44,6 +44,7 @@
                 () => this.isLoading = false
             );
 
+            this.$store.dispatch('userModule/printHello')
             // shop.getProducts(products => {
             //     // this.products = products
             //     // Commit est une methode du store, qui prend en paramettre le nom de la fonction mutation

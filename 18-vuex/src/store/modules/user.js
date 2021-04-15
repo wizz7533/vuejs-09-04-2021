@@ -1,4 +1,5 @@
 let userModule = {
+    namespaced: true,
     // Equivalent à Data
     state: {
     },
@@ -9,6 +10,9 @@ let userModule = {
   
     // Equivalent aux Méthods (Traitement complexe ou asyncrhone, puis appel la mutation)
     actions: {
+        printHello(context) {
+            console.log("Hello form user module: ", context)
+        } 
     },
   
     //Equivalent des proriétés calculées

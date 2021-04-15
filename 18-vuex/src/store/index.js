@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import shop from '@/api/shop';
+import userModule from './modules/user';
 
 export default createStore({
   // Equivalent à Data
@@ -43,5 +44,6 @@ export default createStore({
 
   // Equivalent a components: {}
   modules: {
+    userModule
   }
 });
