@@ -13,7 +13,8 @@
             </router-link> |
             <router-link to="/daskdsakd">Not found</router-link> |
             <router-link to="/login">Connexion</router-link> |
-            <router-link to="/admin">Administration</router-link>
+            <router-link to="/admin">Administration</router-link> |
+            <router-link to="/users">Utilisateurs</router-link>
         </ul>
     </nav>
 </template>
