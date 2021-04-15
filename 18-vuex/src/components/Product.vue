@@ -17,12 +17,20 @@
     export default {
         data() {
             return {
-                products: []
+                // products: []
             }
         },
+        computed: {
+            products(){
+                return this.$store.state.products
+            }
+        },
+        // On attend que le composant soit créer
         created() {
             shop.getProducts(products => {
-                this.products = products
+                // this.products = products
+                // Commit est une methode du store, qui prend en paramettre le nom de la fonction mutation
+                this.$store.commit('setProducts', products);
             });
         }
     }
