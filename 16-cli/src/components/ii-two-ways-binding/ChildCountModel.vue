@@ -9,16 +9,16 @@
 
 <script>
     export default {
-        props: ['count'],
+        props: ['modelValue'],
         data() {
             return {
-                childCount: this.count
+                childCount: this.modelValue
             }
         },
         methods: {
             incrementerChildCount() {
                 this.childCount++;
-                this.$emit("update:count", this.childCount);
+                this.$emit("update:modelValue", this.childCount);
 
             }
         }
