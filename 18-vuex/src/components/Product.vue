@@ -1,7 +1,8 @@
 <template>
     <div>
         <h1>Liste de produit</h1>
-        <ul>
+        <img v-if="isLoading" src="https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" alt="">
+        <ul v-else>
             <li 
                 v-for="product of products" 
                 :key="product.title">
@@ -22,6 +23,7 @@
     export default {
         data() {
             return {
+                isLoading: true,
                 checked: false
                 // products: []
             }
@@ -38,7 +40,9 @@
         // On attend que le composant soit créer
         created() {
             // Pour appeler une action du store, on utilise la methode dispatch()
-            this.$store.dispatch('fetchProducts').then();
+            this.$store.dispatch('fetchProducts').then(
+                () => this.isLoading = false
+            );
 
             // shop.getProducts(products => {
             //     // this.products = products
