@@ -33,7 +33,6 @@
 <script>
     const TheBody = {
         name: 'Body',
-        props: ['search'],
         data() {
             return {
                 movies: [
@@ -63,6 +62,9 @@
             }
         },
         computed: {
+            search() {
+                return this.$store.state.nomDuFilm
+            },
             filteredMovie() {
                 const userSearched = this.search.toLowerCase();
                 const newArray = this.movies.filter(

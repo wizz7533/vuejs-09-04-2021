@@ -1,8 +1,7 @@
 <template>
-    <header :style="headerStyle">
+    <header>
         <h1>Mon site</h1>
-        <!-- <TheNavigationHeader @send-search="$emit('send-search-parent', $event)"></TheNavigationHeader> -->
-        <the-navigation-header @send-search="$emit('send-search-parent', $event)"></the-navigation-header>
+        <the-navigation-header></the-navigation-header>
     </header>
 </template>
 

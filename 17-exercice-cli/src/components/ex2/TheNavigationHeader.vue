@@ -17,8 +17,7 @@
         methods: {
             sendSearch(event) {
                 const searched = event.target.search.value;
-                // console.log(searched);
-                this.$emit('send-search', searched);
+                this.$store.commit('setName', searched);
             }
         },
     }

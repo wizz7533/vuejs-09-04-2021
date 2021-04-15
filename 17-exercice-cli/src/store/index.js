@@ -6,7 +6,7 @@ export default createStore({
   },
   mutations: {
     setName(state, valeur) {
-      
+       state.nomDuFilm = valeur;
     }
   },
   actions: {

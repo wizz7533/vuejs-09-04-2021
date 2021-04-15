@@ -1,8 +1,8 @@
 <template>
   <div>
-      <v-header @send-search-parent="updateSearch($event)"> 
+      <v-header> 
       </v-header>
-      <the-body :search="search"></the-body>
+      <the-body></the-body>
   </div>
 </template>
 
@@ -16,13 +16,9 @@ export default {
   name: 'App',
   data() {
         return {
-            search: ''
         }
     },
     methods: {
-        updateSearch(event) {
-            this.search = event;
-        }
     },
     components: {
         'v-header': TheHeader,
