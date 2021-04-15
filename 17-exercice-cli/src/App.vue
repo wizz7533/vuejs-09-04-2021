@@ -1,7 +1,6 @@
 <template>
   <div>
-      <v-header> 
-      </v-header>
+      <v-header></v-header>
       <the-body></the-body>
   </div>
 </template>
