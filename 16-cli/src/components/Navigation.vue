@@ -11,7 +11,8 @@
             <router-link v-bind:to="{name: 'retour'}"> |
                 Retour
             </router-link> |
-            <router-link to="/daskdsakd">Not found</router-link>
+            <router-link to="/daskdsakd">Not found</router-link> |
+            <router-link to="/login">Connexion</router-link>
         </ul>
     </nav>
 </template>
