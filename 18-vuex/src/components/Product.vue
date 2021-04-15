@@ -37,14 +37,15 @@
                 }
             },
         },
-        // On attend que le composant soit créer
+        // On attend que le composant soit crée
         created() {
             // Pour appeler une action du store, on utilise la methode dispatch()
             this.$store.dispatch('fetchProducts').then(
                 () => this.isLoading = false
             );
 
-            this.$store.dispatch('userModule/printHello')
+            this.$store.dispatch('userModule/printHello');
+            
             // shop.getProducts(products => {
             //     // this.products = products
             //     // Commit est une methode du store, qui prend en paramettre le nom de la fonction mutation
