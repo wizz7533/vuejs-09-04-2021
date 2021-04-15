@@ -16,8 +16,7 @@ router.beforeEach(
   // next: fonction qui permet de rediriger
   function(to, from, next) {
       if (to.meta.requiresAuth) {
-        // il faut etre connecter, 
-        console.log("Il faut etre connecté");
+        // On verifie si l'utilisateur est connecté
         if (userStore.state.email) {
           next();
         } else {

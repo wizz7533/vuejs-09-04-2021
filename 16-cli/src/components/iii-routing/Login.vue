@@ -17,12 +17,14 @@
 </template>
 
 <script>
+    import userStore from '@/store/user';
     export default {
         methods: {
             connexion(event) {
                 const email = event.target.email.value;
                 const mdp = event.target.password.value;
-                console.log(email, mdp);
+                userStore.login(email, mdp);
+                this.$router.push('/admin');
             }
         }
     }
