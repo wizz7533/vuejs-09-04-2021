@@ -4,6 +4,7 @@ import Params from '@/components/iii-routing/Params.vue'
 import GoBack from '@/components/iii-routing/GoBack.vue'
 import NotFound from '@/components/iii-routing/NotFound.vue'
 import Login from '@/components/iii-routing/Login.vue'
+import Admin from '@/components/iii-routing/Admin.vue'
 
 const routes = [
     { path: '/', component: Title },
@@ -16,6 +17,7 @@ const routes = [
     },
     { path: '/:pathMath(.*)*', component: NotFound},
     { path: '/login', component: Login},
+    { path: '/admin', component: Admin},
 ]
 
 export default routes;

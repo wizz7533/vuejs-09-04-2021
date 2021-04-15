@@ -3,11 +3,11 @@
         <form action="" @submit.prevent="connexion($event)">
             <fieldset>
                 <legend>Connexion</legend>
-                <label for="">Email</label>
-                <input type="text" name="email" placeholder="j.doe@exemple.fr"/>
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="j.doe@exemple.fr"/>
                 <br/>
-                <label for="">Mot de passe</label>
-                <input type="password" name="password"/>
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password"/>
                 <br/>
                 
                 <input type="submit" value="Se Connecter">
