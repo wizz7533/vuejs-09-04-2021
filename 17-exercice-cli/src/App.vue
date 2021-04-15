@@ -7,8 +7,10 @@
 </template>
 
 <script>
-import TheBody from './components/ex1/TheBody';
-import TheHeader from './components/ex1/TheHeader';
+// import TheBody from './components/ex1/TheBody';
+// import TheHeader from './components/ex1/TheHeader';
+import TheBody from './components/ex2/TheBody';
+import TheHeader from './components/ex2/TheHeader';
 
 export default {
   name: 'App',
