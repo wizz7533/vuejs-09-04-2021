@@ -7,13 +7,18 @@
 
 <script>
 import Title from './components/i-decouverte/Title.vue';
-import Counter from './components/ii-store/Counter';
+import Counter from './components/ii-two-ways-binding/Counter';
 
 export default {
   name: 'App',
+  provide: function() {
+    return { 
+      count: 12
+    }
+  },
   data() {
     return {
-      message: 'Hello World !'
+      message: 'Hello World !',
     }
   },
   components: {

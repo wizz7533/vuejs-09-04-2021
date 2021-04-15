@@ -3,12 +3,11 @@
         <h3>
             ChildCount: {{childCount}}
         </h3>
-        <deep-count :childCount="childCount"></deep-count>
+        <button @click="incrementerChildCount">Incrementation</button>
     </div>
 </template>
 
 <script>
-import DeepCount from './DeepCount.vue'
     export default {
         props: ['count'],
         data() {
@@ -16,6 +15,12 @@ import DeepCount from './DeepCount.vue'
                 childCount: this.count
             }
         },
-        components: { DeepCount },
+        methods: {
+            incrementerChildCount() {
+                this.childCount++;
+                this.$emit("send-to-app", this.childCount);
+
+            }
+        }
     }
 </script>
