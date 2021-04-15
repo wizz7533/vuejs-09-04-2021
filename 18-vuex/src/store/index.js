@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import shop from '@/api/shop';
 
 export default createStore({
   // Equivalent à Data
@@ -15,7 +16,21 @@ export default createStore({
   },
 
   // Equivalent aux Méthods (Traitement complexe ou asyncrhone, puis appel la mutation)
+  // Les actions renvoie souvent des promesse lorsqu'il y a un traitement asynchrone
   actions: {
+    // le context comprend toutes propriétés (state, getters, mutations ...)
+    // L'argument est fournie par vue
+    fetchProducts(context) {
+      return new Promise(
+        function (resolve) {
+          shop.getProducts(products => {
+            // Commit est une methode du store, qui prend en paramettre le nom de la fonction mutation
+            context.commit('setProducts', products);
+            resolve();
+        }
+      );
+    });
+    }
   },
 
   //Equivalent des proriétés calculées

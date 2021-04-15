@@ -19,8 +19,6 @@
 </template>
 
 <script>
-    import shop from '@/api/shop';
-
     export default {
         data() {
             return {
@@ -39,11 +37,14 @@
         },
         // On attend que le composant soit créer
         created() {
-            shop.getProducts(products => {
-                // this.products = products
-                // Commit est une methode du store, qui prend en paramettre le nom de la fonction mutation
-                this.$store.commit('setProducts', products);
-            });
+            // Pour appeler une action du store, on utilise la methode dispatch()
+            this.$store.dispatch('fetchProducts').then();
+
+            // shop.getProducts(products => {
+            //     // this.products = products
+            //     // Commit est une methode du store, qui prend en paramettre le nom de la fonction mutation
+            //     this.$store.commit('setProducts', products);
+            // });
         }
     }
 </script>
